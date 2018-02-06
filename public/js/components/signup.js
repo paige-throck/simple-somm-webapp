@@ -5,7 +5,8 @@
     .component('signup', {
       controller: controller,
       template: `
-      <div class="row">
+
+<div class="row">
       <div class="col-md-8">
 
         <form ng-submit="">
@@ -20,8 +21,9 @@
           <div>
             <label for="cuisine">Cuisine</label>
 
-            <select ng-model="selectedCuisine" ng-options="wine for wine in wines">
-            </select>
+            <select ng-model="cuisine" class = "form-control">
+     <option ng-repeat= "cuisine in $ctrl.cuisines" value = "cuisine">{{cuisine.cuisine}}</option>
+  </select>
 
           </div>
           <div>
@@ -64,12 +66,12 @@
 
   function controller($http, simpleSomm) {
     const vm = this
-    vm.wines;
+    vm.cuisines;
 
     vm.$onInit = function () {
       simpleSomm.getCuisine()
       .then(() => {
-        vm.wines = simpleSomm.wines;
+        vm.cuisines = simpleSomm.cuisines;
       })
       }
   }
