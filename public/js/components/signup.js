@@ -10,20 +10,43 @@
 
         <form ng-submit="">
           <div>
-            <label for="title">Title</label>
-            <input ng-model="$ctrl.post.title" id="title" class="form-control">
+            <label for="name">Restaurant Name</label>
+            <input ng-model="$ctrl.post.name" id="name" class="form-control">
           </div>
           <div>
-            <label for="body">Body</label>
-            <textarea ng-model="$ctrl.post.body" id="body" class="form-control"></textarea>
+            <label for="email">Email Address</label>
+            <input ng-model="$ctrl.post.email" id="email" class="form-control"></input>
           </div>
           <div>
-            <label for="author">Author</label>
-            <input ng-model="$ctrl.post.author" id="author" class="form-control">
+            <label for="cuisine">Cuisine</label>
+
+            <select ng-model="selectedCuisine" ng-options="wine for wine in wines">
+            </select>
+
           </div>
           <div>
-            <label for="image-url">Image URL</label>
-            <input ng-model="$ctrl.post.image_url" id="image-url" class="form-control">
+            <label for="city">City</label>
+            <input ng-model="$ctrl.post.city" id="city" class="form-control">
+          </div>
+          <div>
+            <label for="state">State</label>
+            <input ng-model="$ctrl.post.state" id="state" class="form-control">
+          </div>
+          <div>
+            <label for="address">Address</label>
+            <input ng-model="$ctrl.post.address" id="address" class="form-control">
+          </div>
+          <div>
+            <label for="zipcode">Zipcode</label>
+            <input ng-model="$ctrl.post.zipcode" id="zipcode" class="form-control">
+          </div>
+          <div>
+            <label for="password">Password</label>
+            <input ng-model="$ctrl.post.password" id="password" class="form-control">
+          </div>
+          <div>
+            <label for="confirmPassword">Confirm Password</label>
+            <input id="confirmPassword" class="form-control">
           </div>
           <div class="form-group">
             <button type="submit" class="btn btn-primary">
@@ -37,9 +60,17 @@
       `
     })
 
-  controller.$inject = ['$http']
+  controller.$inject = ['$http', 'simpleSomm']
 
-  function controller($http) {
+  function controller($http, simpleSomm) {
+    const vm = this
+    vm.wines;
 
+    vm.$onInit = function () {
+      simpleSomm.getCuisine()
+      .then(() => {
+        vm.wines = simpleSomm.wines;
+      })
+      }
   }
 }());
