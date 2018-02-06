@@ -6,7 +6,13 @@
       controller: controller,
       template: `
 
-    <h1>Hello World</h1>
+  </div>
+    <button ui-sref="signup">Sign up</button>
+
+
+    <button ui-sref="login">Login</button>
+
+  </div>
 
       `
     })
