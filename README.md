@@ -13,9 +13,11 @@ https://github.com/AndersDLund/simple-somm-iOS
 
 ## Build Tools
 
-**Front End:** Kube
+**Front End:** Bootstrap
 
 **API:** https://api.wine.com/wiki
+
+**Frontend server:** lite-server
 
 **CRUD operations:** Express.js
 
