@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/paige-throck/simple-somm-webapp/issues"
   },
-  "homepage": "https://github.com/paige-throck/simple-somm-webapp#readme"
+  "homepage": "https://github.com/paige-throck/simple-somm-webapp#readme",
+  "dependencies": {
+    "angular": "^1.6.9",
+    "angular-ui-router": "^1.0.3",
+    "express": "^4.16.2",
+    "knex": "^0.14.2",
+    "ui-router": "^1.0.0-alpha.3"
+  }
 }
