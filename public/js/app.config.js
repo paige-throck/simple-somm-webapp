@@ -25,6 +25,11 @@
        url: '/signup',
        component: 'signup',
      })
+     .state({
+       name: 'profile',
+       url: '/profile',
+       component: 'profile',
+     })
 
  }
 
