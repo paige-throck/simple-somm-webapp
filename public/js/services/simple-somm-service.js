@@ -17,5 +17,12 @@ sm.getCuisine = function(){
     })
   }
 
+sm.addUser = function(newUser){
+  return $http.post('http://localhost:8888/signup', newUser).then(function(response){
+    console.log('you created someone!')
+    sm.newUser = response.data
+  })
+}
+
 }
 }());
