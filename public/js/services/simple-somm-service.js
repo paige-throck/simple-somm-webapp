@@ -38,7 +38,8 @@ sm.getProfile = function(){
     console.log(response.data.id)
     sm.user = response.data
     })
-  }
+}
 
 }
+
 }());
