@@ -5,7 +5,7 @@
     .component('profile', {
       controller: controller,
       template: `
-
+      {{$ctrl.user.name}}, name
       <div class = "row">
         <profilesearch></profilesearch>
         </div>
@@ -22,6 +22,7 @@
     const vm = this
 
     vm.$onInit = function () {
+      console.log('init!!!!!!!')
       simpleSomm.getProfile()
       .then(() => {
         vm.user = simpleSomm.user;

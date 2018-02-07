@@ -39,10 +39,13 @@
 
   const vm = this
 
+
+
     vm.loginUser = function(user){
       simpleSomm.loginUser(vm.user)
       .then((user) => {
-        $state.go('profile', {user: user})
+        
+        $state.go('profile', {param: `${1}`})
       })
     }
 
