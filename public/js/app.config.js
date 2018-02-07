@@ -15,6 +15,21 @@
        url: '/',
        component: 'homepage',
      })
+     .state({
+       name: 'login',
+       url: '/login',
+       component: 'login',
+     })
+     .state({
+       name: 'signup',
+       url: '/signup',
+       component: 'signup',
+     })
+     .state({
+       name: 'profile',
+       url: '/profile',
+       component: 'profile/:id',
+     })
 
  }
 
