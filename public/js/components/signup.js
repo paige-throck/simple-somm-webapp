@@ -6,7 +6,7 @@
       controller: controller,
       template: `
 
-<div class="row">
+    <div class="row">
       <div class="col-md-8">
 
         <form ng-submit="$ctrl.addUser(newUser)">
@@ -22,8 +22,8 @@
             <label for="cuisine">Cuisine</label>
 
             <select ng-model="$ctrl.newUser.cuisine_id" class = "form-control">
-     <option ng-repeat= "cuisine in $ctrl.cuisines" value = "{{cuisine.id}}">{{cuisine.cuisine}}</option>
-  </select>
+              <option ng-repeat= "cuisine in $ctrl.cuisines" value = "{{cuisine.id}}">{{cuisine.cuisine}}</option>
+            </select>
 
           </div>
           <div>
@@ -59,7 +59,7 @@
         </form>
       </div>
     </div>
-    
+
     <a ui-sref="login">Have an account? Login</a>
       `
     })
@@ -75,7 +75,7 @@
       .then(() => {
         vm.cuisines = simpleSomm.cuisines;
       })
-      }
+    }
 
       vm.addUser = function(newUser){
         simpleSomm.addUser(vm.newUser)

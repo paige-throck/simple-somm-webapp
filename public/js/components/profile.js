@@ -6,12 +6,12 @@
       controller: controller,
       template: `
 
-        <div class = "row">
+      <div class = "row">
         <profilesearch></profilesearch>
         </div>
         <p></p>
         <profilewinelists></profilewinelists>
-
+      </div>
       `
     })
 
