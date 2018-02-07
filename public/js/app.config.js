@@ -27,7 +27,7 @@
      })
      .state({
        name: 'profile',
-       url: '/profile/:id',
+       url: '/profile',
        component: 'profile',
      })
 

@@ -15,9 +15,18 @@
       `
     })
 
-  controller.$inject = ['$http']
+  controller.$inject = ['$http', 'simpleSomm', '$state']
 
-  function controller($http) {
+    function controller($http, simpleSomm, $state) {
+
+    const vm = this
+
+    vm.$onInit = function () {
+      simpleSomm.getProfile()
+      .then(() => {
+        vm.user = simpleSomm.user;
+      })
+    }
 
   }
 }());

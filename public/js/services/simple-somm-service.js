@@ -31,5 +31,12 @@ sm.loginUser = function(user){
   })
 }
 
+sm.getProfile = function(){
+  return $http.get(`http://localhost:8888/profiles/${id}`).then(function (response){
+    console.log(response.data)
+    sm.cuisines = response.data
+    })
+  }
+
 }
 }());
