@@ -28,7 +28,7 @@
      .state({
        name: 'profile',
        url: '/profile',
-       component: 'profile',
+       component: 'profile/:id',
      })
 
  }
