@@ -6,7 +6,7 @@
       controller: controller,
       template: `
 
-        
+        "Wine List"
 
       `
     })

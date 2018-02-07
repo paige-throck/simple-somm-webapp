@@ -8,16 +8,16 @@
       <div class="row">
       <div class="col-md-8">
 
-        <form ng-submit="">
+        <form ng-submit="$ctrl.loginUser(user)">
 
         <div>
           <label for="email">Email</label>
-          <input ng-model="$ctrl.post.email" id="email" class="form-control"></input>
+          <input ng-model="$ctrl.user.email" id="email" class="form-control"></input>
         </div>
 
           <div>
             <label for="password">Password</label>
-            <input ng-model="$ctrl.post.password" id="password" class="form-control">
+            <input ng-model="$ctrl.user.password" id="password" class="form-control">
           </div>
           <p></p>
           <button type="submit" class="btn btn-primary">
@@ -33,9 +33,18 @@
       `
     })
 
-  controller.$inject = ['$http']
+  controller.$inject = ['$http', 'simpleSomm', '$state']
 
-  function controller($http) {
+  function controller($http, simpleSomm, $state) {
+
+  const vm = this
+
+    vm.loginUser = function(user){
+      simpleSomm.loginUser(vm.user)
+      .then(() => {
+        $state.go('profile')
+      })
+    }
 
   }
 }());

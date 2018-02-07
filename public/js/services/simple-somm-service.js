@@ -24,5 +24,12 @@ sm.addUser = function(newUser){
   })
 }
 
+sm.loginUser = function(user){
+  return $http.post('http://localhost:8888/login', user).then(function(response){
+    console.log("you're logged in!")
+    sm.user = response.data
+  })
+}
+
 }
 }());
