@@ -51,14 +51,16 @@
             <input id="confirmPassword" class="form-control">
           </div>
           <div class="form-group">
+          <p></p>
             <button type="submit" class="btn btn-primary">
               Sign up!
             </button>
           </div>
         </form>
-
       </div>
     </div>
+    
+    <a ui-sref="login">Have an account? Login</a>
       `
     })
 

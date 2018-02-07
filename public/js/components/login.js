@@ -14,17 +14,22 @@
           <label for="email">Email</label>
           <input ng-model="$ctrl.post.email" id="email" class="form-control"></input>
         </div>
-        
+
           <div>
             <label for="password">Password</label>
             <input ng-model="$ctrl.post.password" id="password" class="form-control">
           </div>
-
+          <p></p>
+          <button type="submit" class="btn btn-primary">
+            Log in!
+          </button>
 
         </form>
 
       </div>
     </div>
+
+    <a ui-sref="signup">Not a user? Create Account</a>
       `
     })
 

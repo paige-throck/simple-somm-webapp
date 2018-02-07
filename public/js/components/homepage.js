@@ -7,12 +7,14 @@
       template: `
 
   </div>
-    <button ui-sref="signup">Sign up</button>
+    <button class="btn btn-primary" ui-sref="signup">Sign up</button>
 
 
-    <button ui-sref="login">Login</button>
+    <button class="btn btn-primary" ui-sref="login">Login</button>
 
   </div>
+
+
 
       `
     })
