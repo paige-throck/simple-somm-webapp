@@ -80,7 +80,7 @@
       vm.addUser = function(newUser){
         simpleSomm.addUser(vm.newUser)
         .then((newUser) => {
-          console.log(newUser)
+      
           $state.go('login')
         })
       }

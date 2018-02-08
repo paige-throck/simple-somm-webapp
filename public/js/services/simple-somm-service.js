@@ -30,14 +30,18 @@ sm.loginUser = function(user){
     console.log("you're logged in!")
     console.log(response.data[0].id, 'response');
     sm.user = response.data[0]
-    id = response.data[0].id
+    id = sm.user.id
+    console.log(id, 'this is the best id wowowowowowow')
+    // return $http.get(`http://localhost:8888/profiles/${id}`)
+    // $state.go('profile', {param: `${id}`})
+    return id
   })
 }
 
 sm.getProfile = function(){
 
   return $http.get(`http://localhost:8888/profiles/${id}`).then(function (response){
-    console.log(response.data[0].id)
+    console.log(response.data[0].id, 'from get profile')
     sm.user = response.data[0]
     })
 }

@@ -44,8 +44,9 @@
     vm.loginUser = function(user){
       simpleSomm.loginUser(vm.user)
       .then((user) => {
-        
-        $state.go('profile', {param: `${1}`})
+        console.log(user, "aslknaskjsakaslkjaskljdaklsdlkjasd")
+
+        $state.go('profile', {param: `${user}`})
       })
     }
 
