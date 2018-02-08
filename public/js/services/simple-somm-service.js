@@ -6,8 +6,8 @@
     .service('simpleSomm', service)
 
 
-service.inject = ['$http']
-function service($http){
+service.inject = ['$http', '$cookies']
+function service($http, $cookies){
   const sm = this
   let id;
   let user;
@@ -28,11 +28,12 @@ sm.addUser = function(newUser){
 
 sm.loginUser = function(user){
   return $http.post('http://localhost:8888/login', user).then(function(response){
+
     console.log("you're logged in!")
-    console.log(response.data[0].id, 'response');
-    sm.user = response.data[0]
-    id = sm.user.id
-    console.log(id, 'this is the best id wowowowowowow')
+    console.log(response.data, "dtatatatatatata");
+    sm.user = response.data
+    id = response.data.id
+    console.log(id);
     // return $http.get(`http://localhost:8888/profiles/${id}`)
     // $state.go('profile', {param: `${id}`})
     return id
