@@ -40,7 +40,7 @@ sm.loginUser = function(user){
 }
 
 sm.getProfile = function(){
-console.log(session, 'session');
+
   return $http.get(`http://localhost:8888/profiles/${id}`).then(function (response){
     console.log(response.data[0].id, 'from get profile')
     sm.user = response.data[0]
