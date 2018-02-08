@@ -14,6 +14,14 @@
   controller.$inject = ['$http']
 
   function controller($http) {
+    const vm = this
+
+    vm.$onInit = function () {
+      simpleSomm.getWineLists()
+      .then(() => {
+        vm.wineList = simpleSomm.wineList;
+      })
+    }
 
   }
 }());

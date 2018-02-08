@@ -11,6 +11,7 @@ function service($http){
   const sm = this
   let id;
   let user;
+
 sm.getCuisine = function(){
   return $http.get('http://localhost:8888/signup').then(function (response){
     console.log(response.data)
@@ -39,13 +40,20 @@ sm.loginUser = function(user){
 }
 
 sm.getProfile = function(){
-
+console.log(session, 'session');
   return $http.get(`http://localhost:8888/profiles/${id}`).then(function (response){
     console.log(response.data[0].id, 'from get profile')
     sm.user = response.data[0]
     })
 }
 
+// sm.getWineLists = function(){
+//   return $http.get(`http://localhost:8888/profiles/${id}/wineList`).then(function (response){
+//     console.log(response.data)
+//     sm.wineList = response.data
+//     })
+//   }
+//
 }
 
 }());
