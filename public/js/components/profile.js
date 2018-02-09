@@ -5,41 +5,43 @@
     .component('profile', {
       controller: controller,
       template: `
-      <div class = "row">
-
-      <div class="col-sm-2">
-        <div class="search-container">
-          <form action="/action_page.php">
-            <input type="text" placeholder="Search.." name="search">
-              <button type="submit"><i class="fa fa-search"></i></button>
-          </form>
-        </div>
-      </div>
-
-      <div class ="col-sm-8">
-      </div>
-
+    <div class = "row">
       <div class="col-sm-2">
         <button class="btn btn-primary" ui-sref="home">Logout</button>
       </div>
 
+
         </div>
         <p></p>
-        <h3><b><center>{{$ctrl.user.name}} Wine List</center></b></h3>
-        <ul>
-          <li ng-repeat=" wine in $ctrl.wineList" >
-          <p></p>
-            <b>{{ wine.name }}</b>
-            {{ wine.vintage }},
-            {{ wine.color }},
-            {{ wine.varietal }}
-            {{ wine.origin}}
-            <p></p>
-            {{ wine.description }}
-        </li>
-        </ul>
+        <h3><b><center>{{$ctrl.user.name}}'s Wine List</center></b></h3>
+        <p></p>
 
+        <input type="text" ng-model="filterText" placeholder="Search">
+        <p></p>
+      <body data-target="#navbar-example">
+
+  <div id="navbar-example">
+    <ul class="nav nav-tabs" role="tablist">
+    <li ng-repeat=" wine in $ctrl.wineList | filter: filterText">
+      <p></p>
+      <div>
+        <b>{{ wine.name }}</b>
+        - <i>{{ wine.vintage }}</i>
+      <div>
+        <em>{{ wine.color }}</em>,
+        <em>{{ wine.varietal }}</em>
+        <em>{{ wine.origin}}</em>
       </div>
+      <div>
+      </div>
+      {{ wine.description }}
+      <a ng-click="$ctrl.deleteWine(user, wine)"> Delete</a>
+      <p></p>
+
+    </li>
+    </ul>
+  </div>
+</body>
       `
     })
 
@@ -48,6 +50,8 @@
     function controller($http, simpleSomm, $state) {
 
     const vm = this
+    vm.user;
+    vm.wine;
 
     vm.$onInit = function () {
       simpleSomm.getWineLists()
@@ -60,6 +64,24 @@
         })
 
     }
+
+    vm.deleteWine = function(user, wine) {
+      vm.user = user;
+      vm.wine = wine;
+      let id = user.id
+      let wineId = wine.id
+      console.log(user.id, "ussssssser id");
+      console.log(wine.id, "winnnnnnne id");
+      $http.delete(`http://localhost:8888/profiles/${id}/${wineId}`)
+    }
+
+
+
+    window.addEventListener("beforeunload",         function(event) {
+        $state.go('home')
+    });
+
+
 
 
   }

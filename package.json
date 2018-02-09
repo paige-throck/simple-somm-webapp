@@ -21,6 +21,7 @@
     "angular-ui-router": "^1.0.3",
     "express": "^4.16.2",
     "knex": "^0.14.2",
+    "ng-scroll-bar": "^0.2.4",
     "ui-router": "^1.0.0-alpha.3"
   }
 }

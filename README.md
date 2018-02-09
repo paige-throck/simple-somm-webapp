@@ -1,21 +1,21 @@
 # simple-somm
-A full stack iOS/web application for Restaurants looking to create a wine program
+A split stack iOS/web application for Restaurants looking to create a wine program
 
 
 ## Project Links
 
 https://github.com/paige-throck/simple-somm-backend
 
-https://github.com/ssfiero/simple-somm-webapp
+https://github.com/paige-throck/simple-somm-webapp
 
 https://github.com/AndersDLund/simple-somm-iOS
 
 
 ## Build Tools
 
-**Front End:** Bootstrap
+**Front End:** Bootstrap / Angular
 
-**API:** https://api.wine.com/wiki
+**Mobile:** Swift
 
 **Frontend server:** lite-server
 

@@ -1,0 +1,25 @@
+body{
+  margin: auto;
+}
+
+
+.title{
+  font-style: bold italic;
+}
+.wineImage{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img{
+  height: 50%;
+  width: 50%;
+}
+
+p{
+  font-size: 20px;
+}
+
+#nav{
+  overflow: auto;
+}
