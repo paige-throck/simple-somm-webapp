@@ -9,6 +9,7 @@
 
    $locationProvider.html5Mode(true)
 
+
    $stateProvider
      .state({
        name: 'home',
