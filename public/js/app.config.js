@@ -9,6 +9,7 @@
 
    $locationProvider.html5Mode(true)
 
+
    $stateProvider
      .state({
        name: 'home',
@@ -27,8 +28,11 @@
      })
      .state({
        name: 'profile',
-       url: '/profile',
-       component: 'profile/:id',
+       url: '/profiles/:param',
+       component: 'profile',
+       params: {
+         userId: null
+       }
      })
 
  }

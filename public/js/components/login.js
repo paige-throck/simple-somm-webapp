@@ -5,11 +5,11 @@
     .component('login', {
       controller: controller,
       template: `
+
+
       <div class="row">
-      <div class="col-md-8">
-
+      <div class= "col">
         <form ng-submit="$ctrl.loginUser(user)">
-
         <div>
           <label for="email">Email</label>
           <input ng-model="$ctrl.user.email" id="email" class="form-control"></input>
@@ -39,10 +39,13 @@
 
   const vm = this
 
+
+
     vm.loginUser = function(user){
       simpleSomm.loginUser(vm.user)
       .then((user) => {
-        $state.go('profile', {user: user})
+        console.log(user, "wtf is this")
+        $state.go('profile', {param: `${user}`}, {userId: user})
       })
     }
 

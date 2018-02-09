@@ -5,12 +5,40 @@
     .component('profile', {
       controller: controller,
       template: `
-
       <div class = "row">
-        <profilesearch></profilesearch>
+
+      <div class="col-sm-2">
+        <div class="search-container">
+          <form action="/action_page.php">
+            <input type="text" placeholder="Search.." name="search">
+              <button type="submit"><i class="fa fa-search"></i></button>
+          </form>
+        </div>
+      </div>
+
+      <div class ="col-sm-8">
+      </div>
+
+      <div class="col-sm-2">
+        <button class="btn btn-primary" ui-sref="home">Logout</button>
+      </div>
+
         </div>
         <p></p>
-        <profilewinelists></profilewinelists>
+        <h3><b><center>{{$ctrl.user.name}} Wine List</center></b></h3>
+        <ul>
+          <li ng-repeat=" wine in $ctrl.wineList" >
+          <p></p>
+            <b>{{ wine.name }}</b>
+            {{ wine.vintage }},
+            {{ wine.color }},
+            {{ wine.varietal }}
+            {{ wine.origin}}
+            <p></p>
+            {{ wine.description }}
+        </li>
+        </ul>
+
       </div>
       `
     })
@@ -22,11 +50,17 @@
     const vm = this
 
     vm.$onInit = function () {
-      simpleSomm.getProfile()
+      simpleSomm.getWineLists()
       .then(() => {
-        vm.user = simpleSomm.user;
+        vm.wineList = simpleSomm.wineList;
       })
+        simpleSomm.getProfile()
+        .then(() => {
+          vm.user = simpleSomm.user;
+        })
+
     }
+
 
   }
 }());

@@ -7,7 +7,7 @@
       template: `
 
     <div class="row">
-      <div class="col-md-8">
+      <div class="col">
 
         <form ng-submit="$ctrl.addUser(newUser)">
           <div>
@@ -79,7 +79,8 @@
 
       vm.addUser = function(newUser){
         simpleSomm.addUser(vm.newUser)
-        .then(() => {
+        .then((newUser) => {
+
           $state.go('login')
         })
       }

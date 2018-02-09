@@ -6,21 +6,19 @@
       controller: controller,
       template: `
 
-  </div>
+  </div><center>
     <button class="btn btn-primary" ui-sref="signup">Sign up</button>
 
     <button class="btn btn-primary" ui-sref="login">Login</button>
-
-  </div>
-
-
+  </center></div>
 
       `
     })
 
-  controller.$inject = ['$http']
+    controller.$inject = ['$http', 'simpleSomm', '$state']
 
-  function controller($http) {
+    function controller($http,  simpleSomm, $state) {
 
-  }
+
+    }
 }());
