@@ -13,32 +13,35 @@
 
         </div>
         <p></p>
-        <h3><b><center>{{$ctrl.user.name}} Wine List</center></b></h3>
+        <h3><b><center>{{$ctrl.user.name}}'s Wine List</center></b></h3>
         <p></p>
 
         <input type="text" ng-model="filterText" placeholder="Filter wines!">
         <p></p>
-      <body data-spy="scroll" data-target="#navbar-example">
+      <body data-target="#navbar-example">
 
   <div id="navbar-example">
     <ul class="nav nav-tabs" role="tablist">
     <li ng-repeat=" wine in $ctrl.wineList | filter: filterText">
-    <p></p>
-      <b>{{ wine.name }}</b>
-      -{{ wine.vintage }},
-      {{ wine.color }},
-      {{ wine.varietal }}
-      {{ wine.origin}}
+      <p></p>
+      <div>
+        <b>{{ wine.name }}</b>
+        - <i>{{ wine.vintage }}</i>
+      <div>
+        <em>{{ wine.color }}</em>,
+        <em>{{ wine.varietal }}</em>
+        <em>{{ wine.origin}}</em>
+      </div>
+      <div>
+      </div>
       {{ wine.description }}
-    <p></p>  
-  </li>
+      <a ng-click="$ctrl.deleteWine(user, wine)"> Delete</a>
+      <p></p>
+
+    </li>
     </ul>
   </div>
-
 </body>
-
-
-
       `
     })
 
@@ -47,6 +50,8 @@
     function controller($http, simpleSomm, $state) {
 
     const vm = this
+    vm.user;
+    vm.wine;
 
     vm.$onInit = function () {
       simpleSomm.getWineLists()
@@ -60,10 +65,27 @@
 
     }
 
+    vm.deleteWine = function(user, wine) {
+      vm.user = user;
+      vm.wine = wine;
+      let id = user.id
+      let wineId = wine.id
+      console.log(user.id, "ussssssser id");
+      console.log(wine.id, "winnnnnnne id");
+      $http.delete(`http://localhost:8888/profiles/${id}/${wineId}`)
+    }
 
 
 
-    // $state.transitionTo('home', null, {'reload':false});
+    window.addEventListener("reload", function(event) {
+    $state.go('home')
+});
+
+
+    window.onbeforeunload = function() {
+      $state.go('home')
+    }
+
 
 
   }

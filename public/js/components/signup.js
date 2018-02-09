@@ -6,7 +6,7 @@
       controller: controller,
       template: `
 
-    <p></p>
+    
     <div class="row">
       <div class="col">
 
