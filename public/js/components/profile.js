@@ -5,41 +5,40 @@
     .component('profile', {
       controller: controller,
       template: `
-      <div class = "row">
-
-      <div class="col-sm-2">
-        <div class="search-container">
-          <form action="/action_page.php">
-            <input type="text" placeholder="Search.." name="search">
-              <button type="submit"><i class="fa fa-search"></i></button>
-          </form>
-        </div>
-      </div>
-
-      <div class ="col-sm-8">
-      </div>
-
+    <div class = "row">
       <div class="col-sm-2">
         <button class="btn btn-primary" ui-sref="home">Logout</button>
       </div>
 
+
         </div>
         <p></p>
         <h3><b><center>{{$ctrl.user.name}} Wine List</center></b></h3>
-        <ul>
-          <p ng-repeat=" wine in $ctrl.wineList" >
-          <p></p>
-            <b>{{ wine.name }}</b>
-            {{ wine.vintage }},
-            {{ wine.color }},
-            {{ wine.varietal }}
-            {{ wine.origin}}
-            <p></p>
-            {{ wine.description }}
-        </p>
-        </ul>
+        <p></p>
 
-      </div>
+        <input type="text" ng-model="filterText" placeholder="Filter wines!">
+        <p></p>
+      <body data-spy="scroll" data-target="#navbar-example">
+
+  <div id="navbar-example">
+    <ul class="nav nav-tabs" role="tablist">
+    <li ng-repeat=" wine in $ctrl.wineList | filter: filterText">
+    <p></p>
+      <b>{{ wine.name }}</b>
+      -{{ wine.vintage }},
+      {{ wine.color }},
+      {{ wine.varietal }}
+      {{ wine.origin}}
+      {{ wine.description }}
+    <p></p>  
+  </li>
+    </ul>
+  </div>
+
+</body>
+
+
+
       `
     })
 
@@ -60,6 +59,11 @@
         })
 
     }
+
+
+
+
+    // $state.transitionTo('home', null, {'reload':false});
 
 
   }
