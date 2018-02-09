@@ -6,15 +6,23 @@
       controller: controller,
       template: `
       <div class = "row">
-      <div class="search-container">
-        <form action="/action_page.php">
-          <input type="text" placeholder="Search.." name="search">
-            <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
-      </div>
-        <div class="col-8">
-        <button class="btn btn-primary" ui-sref="home">Logout</button>
+
+      <div class="col-sm-2">
+        <div class="search-container">
+          <form action="/action_page.php">
+            <input type="text" placeholder="Search.." name="search">
+              <button type="submit"><i class="fa fa-search"></i></button>
+          </form>
         </div>
+      </div>
+
+      <div class ="col-sm-8">
+      </div>
+
+      <div class="col-sm-2">
+        <button class="btn btn-primary" ui-sref="home">Logout</button>
+      </div>
+
         </div>
         <p></p>
         <h3><b><center>{{$ctrl.user.name}} Wine List</center></b></h3>
@@ -28,10 +36,9 @@
             {{ wine.origin}}
             <p></p>
             {{ wine.description }}
-
         </li>
-        <p></p>
         </ul>
+
       </div>
       `
     })
