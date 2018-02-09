@@ -16,7 +16,7 @@
         <h3><b><center>{{$ctrl.user.name}}'s Wine List</center></b></h3>
         <p></p>
 
-        <input type="text" ng-model="filterText" placeholder="Filter wines!">
+        <input type="text" ng-model="filterText" placeholder="Search">
         <p></p>
       <body data-target="#navbar-example">
 
@@ -77,14 +77,10 @@
 
 
 
-    window.addEventListener("reload", function(event) {
-    $state.go('home')
-});
+    window.addEventListener("beforeunload",         function(event) {
+        $state.go('home')
+    });
 
-
-    window.onbeforeunload = function() {
-      $state.go('home')
-    }
 
 
 
