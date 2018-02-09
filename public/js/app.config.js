@@ -29,6 +29,9 @@
        name: 'profile',
        url: '/profiles/:param',
        component: 'profile',
+       params: {
+         userId: null
+       }
      })
 
  }

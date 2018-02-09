@@ -6,14 +6,18 @@
       controller: controller,
       template: `
 
-        "Wine List"
+    <ul>
+      <li ng-repeat=" wine in $ctrl.wineList" >
+        {{ wine.name }}
+    </li>
+    </ul>
 
       `
     })
 
-  controller.$inject = ['$http']
+  controller.$inject = ['$http', 'simpleSomm']
 
-  function controller($http) {
+  function controller($http, simpleSomm) {
     const vm = this
 
     vm.$onInit = function () {

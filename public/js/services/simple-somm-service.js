@@ -28,7 +28,6 @@ sm.addUser = function(newUser){
 
 sm.loginUser = function(user){
   return $http.post('http://localhost:8888/login', user).then(function(response){
-
     console.log("you're logged in!")
     console.log(response.data, "dtatatatatatata");
     sm.user = response.data
@@ -41,20 +40,20 @@ sm.loginUser = function(user){
 }
 
 sm.getProfile = function(){
-
   return $http.get(`http://localhost:8888/profiles/${id}`).then(function (response){
     console.log(response.data[0].id, 'from get profile')
     sm.user = response.data[0]
     })
 }
 
-// sm.getWineLists = function(){
-//   return $http.get(`http://localhost:8888/profiles/${id}/wineList`).then(function (response){
-//     console.log(response.data)
-//     sm.wineList = response.data
-//     })
-//   }
-//
+sm.getWineLists = function(){
+  return $http.get(`http://localhost:8888/profiles/${id}/wineList`).then(function (response){
+    console.log(response, 'get wines response')
+    console.log(response.data.response, 'wiwnwnwnwnwnwnwnwnwnwnwnw')
+    sm.wineList = response.data.response
+    })
+  }
+
 }
 
 }());
