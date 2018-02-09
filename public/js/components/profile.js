@@ -27,7 +27,7 @@
         <p></p>
         <h3><b><center>{{$ctrl.user.name}} Wine List</center></b></h3>
         <ul>
-          <li ng-repeat=" wine in $ctrl.wineList" >
+          <p ng-repeat=" wine in $ctrl.wineList" >
           <p></p>
             <b>{{ wine.name }}</b>
             {{ wine.vintage }},
@@ -36,7 +36,7 @@
             {{ wine.origin}}
             <p></p>
             {{ wine.description }}
-        </li>
+        </p>
         </ul>
 
       </div>
