@@ -8,7 +8,7 @@ https://github.com/paige-throck/simple-somm-backend
 
 https://github.com/paige-throck/simple-somm-webapp
 
-https://github.com/AndersDLund/simple-somm-iOS
+https://www.youtube.com/watch?v=DYA1NLcZlFI
 
 
 ## Build Tools
